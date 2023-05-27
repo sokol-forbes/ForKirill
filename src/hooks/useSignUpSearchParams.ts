@@ -17,16 +17,21 @@ export const useSignUpSearchParams = ({ checkFormStep }: IUseSignUpSearchParamsP
   useEffect(() => {
     const urlQueryParams = new URLSearchParams(location.search);
 
-    const step: ESignUpStep = urlQueryParams.get("step")! as ESignUpStep;
+    const locationStep: ESignUpStep = urlQueryParams.get("step")! as ESignUpStep;
 
-    if (Object.values(ESignUpStep).includes(step) && checkFormStep(step)) {
-      setStep(step);
+    if (step === locationStep) {
+      return;
+    }
+
+    if (Object.values(ESignUpStep).includes(locationStep) && checkFormStep(locationStep)) {
+      setStep(locationStep);
       return;
     }
 
     urlQueryParams.set("step", stepBySteps[0]);
-    navigate({ search: urlQueryParams.toString() });
-  }, []);
+    setStep(stepBySteps[0]);
+    navigate({ search: urlQueryParams.toString() }, { replace: true });
+  }, [location.search]);
 
   const nextStep = useCallback(() => {
     if (checkFormStep(step)) {
@@ -51,13 +56,11 @@ export const useSignUpSearchParams = ({ checkFormStep }: IUseSignUpSearchParamsP
     if (index - 1 < 0) {
       return;
     }
-    const urlQueryParams = new URLSearchParams(location.search);
 
     const newStep = stepBySteps[index - 1];
 
-    urlQueryParams.set("step", newStep);
+    navigate(-1);
     setStep(newStep);
-    navigate({ search: urlQueryParams.toString() });
   }, [step, location.search]);
 
   return {

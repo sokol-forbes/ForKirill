@@ -2,7 +2,7 @@ import { LazyExoticComponent, ReactElement, ReactNode, lazy } from "react"
 
 export enum ERoute {
   SIGNUP = "signup",
-  LOGIN = "login",
+  LOGIN = "/",
 }
 
 export interface IRoute {

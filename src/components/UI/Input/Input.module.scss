@@ -1,8 +1,8 @@
 .input {
   padding: var(--xss);
-  background-color: var(--background);
+  background-color: var(--gray);
   height: 16px;
-  border-bottom: var(--small-width) solid var(--contrast);
+  border-radius: var(--base-border);
 
   &[data-is-loading="true"] {
     border: none;
@@ -19,7 +19,6 @@
   }
 
   &__wrapper {
-    padding: 0 var(--xs);
     display: flex;
     flex-direction: column;
     white-space: nowrap;
@@ -37,12 +36,31 @@
     }
   }
 
+  &__showPassword {
+    position: absolute;
+    top: 3px;
+    right: 0;//var(--xs);
+    width: 20px;
+    height: 20px;
+    stroke: #000;
+    cursor: pointer;
+
+    &_input {
+      padding: var(--xss) 20px var(--xss) var(--xss);
+    }
+  }
+
+  &:focus {
+    background-color: var(--gray);
+  }
+
   &__error {
     font-size: var(--font-small);
     color: var(--error);
     white-space: pre-wrap;
 
     &_wrapper {
+      position: relative;
       display: flex;
       flex-direction: column;
     }

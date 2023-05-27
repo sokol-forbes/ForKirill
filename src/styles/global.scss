@@ -28,4 +28,18 @@ span, p, label, button {
 h1, h2, h3, h4, h5 {
   font-size: var(--font-medium);
   font-weight: var(--normal);
+  margin: 0;
+  padding: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
