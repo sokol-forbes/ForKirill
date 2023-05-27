@@ -1,0 +1,82 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: var(--medium-width) solid var(--accent-main);
+  border-radius: var(--base-border);
+  background-color: var(--background);
+  color: var(--accent-main);
+  padding: var(--xs) var(--s);
+  font-size: var(--font-medium);
+  transition: background-color var(--animation-fast);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--background);
+    background-color: var(--accent-main);
+  }
+
+  &__success {
+    border-color: var(--success);
+    color: var(--success);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--background);
+      background-color: var(--success);
+    }
+  }
+
+  &__warning {
+    border-color: var(--warning);
+    color: var(--warning);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--background);
+      background-color: var(--warning);
+    }
+  }
+
+  &__error {
+    border-color: var(--error);
+    color: var(--error);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--background);
+      background-color: var(--error);
+    }
+  }
+
+  &:disabled {
+    color: var(--disabled);
+    border-color: var(--disabled);
+
+    &:hover {
+      cursor: not-allowed;
+      color: var(--disabled);
+      background-color: var(--background);
+      border-color: var(--disabled);
+    }
+  }
+
+  &__spinner {
+    height: 30px;
+    width: 30px;    
+    margin: auto;
+    position: absolute;
+
+    div {
+      border-color: var(--disabled) transparent transparent transparent;
+      border-width: 3px;
+      width: calc(30px - 2 * 3px);
+      height: calc(30px - 2 * 3px);
+    }
+  }
+
+  &__loading {
+    color: var(--background) !important;
+  }
+}

@@ -1,0 +1,73 @@
+.lds-ring {
+  position: relative;
+  width: 40px;
+  height: 40px;
+
+  &__element {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    border: var(--large-width) solid var(--disabled);
+    border-radius: 50%;
+    animation: lds-ring 1200ms linear infinite;
+    border-color: var(--disabled) transparent transparent transparent;
+
+    &[data-i='2'] {
+      animation: lds-ring2 1200ms ease-out infinite;
+    }
+    &[data-i='3'] {
+      animation: lds-ring3 1200ms ease-out infinite;
+    }
+    &[data-i='4'] {
+      animation: lds-ring4 1200ms ease-out infinite;
+    }
+    
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  37.5% {
+    transform: rotate(210deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  37.5% {
+    transform: rotate(300deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  37.5% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

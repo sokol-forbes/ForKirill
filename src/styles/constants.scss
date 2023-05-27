@@ -1,0 +1,62 @@
+// spacings
+:root {
+  --xss: 4px;
+  --xs: 8px;
+  --s: 16px;
+  --md: 24px;
+  --xl: 32px;
+  --xxl: 48px
+}
+
+// colors
+:root {
+  --success: #00d000;
+  --warning: #ffea02;
+  --error: #ff0e0e;
+  --contrast: #000;
+  --background: #fff;
+  --accent-main: #2c30ff;
+  --accent-light: #595bfb;
+  --disabled: #ececec;
+}
+
+// animation
+// duration
+:root {
+  --animation-fast: 300ms;
+  --animation-medium: 500ms;
+  --animation-slow: 1s;
+}
+
+// borders
+// radius
+:root {
+  --base-border: 5px;
+  --round-border: 10px;
+  --circle-border: 100%;
+}
+
+// line-width
+:root {
+  --small-width: 1px;
+  --medium-width: 2px;
+  --large-width: 5px;
+}
+
+// typography
+// font-size
+:root {
+  --font-small: 12px;
+  --font-medium: 16px;
+  --font-large: 20px;
+  --font-size-ml: 22px;
+  --font-big: 24px;
+  --font-title: 36px;
+}
+
+// font-weight
+:root {
+  --bold: 700;
+  --semi-bold: 600;
+  --normal: 400;
+}

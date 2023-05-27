@@ -1,11 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>React App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+
+  <!-- <link rel="icon" href="%PUBLIC_URL%/logo.png" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React App</title>
+  <style>
+    #root:empty+.spinner_outer> .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+    }
+
+    #root:empty+.spinner_outer> .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      /* margin: 8px; */
+      border: 5px solid #ececec;
+      border-radius: 50%;
+      animation: lds-ring 1200ms linear infinite;
+      border-color: #ececec transparent transparent transparent;
+    }
+
+    #root:empty+.spinner_outer> .lds-ring div[data-i='2'] {
+      animation: lds-ring2 1200ms ease-out infinite;
+    }
+
+    #root:empty+.spinner_outer> .lds-ring div[data-i='3'] {
+      animation: lds-ring3 1200ms ease-out infinite;
+    }
+
+    #root:empty+.spinner_outer> .lds-ring div[data-i='4'] {
+      animation: lds-ring4 1200ms ease-out infinite;
+    }
+
+    @keyframes lds-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes lds-ring2 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      37.5% {
+        transform: rotate(210deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes lds-ring3 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      37.5% {
+        transform: rotate(300deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes lds-ring4 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      37.5% {
+        transform: rotate(360deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #root:empty+.spinner_outer {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 32px;
+      background: white;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root"></div>
+  <div class="spinner_outer">
+    <div class="lds-ring">
+      <div data-i='1'></div>
+      <div data-i='2'></div>
+      <div data-i='3'></div>
+      <div data-i='4'></div>
+    </div>
+  </div>
+</body>
+
 </html>

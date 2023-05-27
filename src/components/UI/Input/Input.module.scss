@@ -1,0 +1,61 @@
+.input {
+  padding: var(--xss);
+  background-color: var(--background);
+  height: 16px;
+  border-bottom: var(--small-width) solid var(--contrast);
+
+  &[data-is-loading="true"] {
+    border: none;
+    background: linear-gradient(110deg, var(--disabled) 8%, #f5f5f5 18%, var(--disabled) 33%);
+    border-radius: var(--base-border);
+    background-size: 200% 100%;
+    animation: var(--animation-slow) shine linear infinite;
+  }
+
+  &[data-error="true"] {
+    border-radius: var(--base-border);
+    border: var(--small-width) solid var(--error);
+    color: var(--error)
+  }
+
+  &__wrapper {
+    padding: 0 var(--xs);
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    row-gap: var(--xss);
+  }
+
+  &__title {
+    &[data-is-loading="true"] {
+      background: var(--background);
+      width: 50%;
+      background: linear-gradient(110deg, var(--disabled) 8%, #f5f5f5 18%, var(--disabled) 33%);
+      border-radius: var(--small-width);
+      background-size: 200% 100%;
+      animation: var(--animation-slow) shine linear infinite;
+    }
+  }
+
+  &__error {
+    font-size: var(--font-small);
+    color: var(--error);
+    white-space: pre-wrap;
+
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_block {
+      row-gap: var(--xss);
+      min-height: 42px;
+    }
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

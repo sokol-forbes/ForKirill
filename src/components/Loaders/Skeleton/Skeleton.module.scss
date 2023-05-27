@@ -1,0 +1,16 @@
+.skeleton {
+  background: var(--background);
+  height: 19px;
+  background: linear-gradient(110deg, var(--disabled) 8%, #f5f5f5 18%, var(--disabled) 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: var(--animation-slow) shine linear infinite;
+  width: 100%;
+  min-width: 80px;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
